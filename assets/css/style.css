@@ -1,0 +1,109 @@
+/* 1. 컬러 팔레트 (CSS 변수로 관리) */
+:root {
+  --bg-color: #ffffff;
+  --text-primary: #1d1d1f; /* 기본 텍스트 (거의 검정) */
+  --text-secondary: #6e6e73; /* 보조 텍스트 (회색) */
+  --accent-color: #0071e3; /* 강조색 (파란색) */
+  --border-color: #d2d2d7; /* 테두리 색 */
+  --code-bg: #2d2d2d; /* 코드 블록 배경 */
+}
+
+/* 2. 기본 폰트 및 배경 설정 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Pretendard", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. 전체 레이아웃 */
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* 4. 헤더 스타일 */
+header {
+  transition: background-color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+}
+header.sticky {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+header nav a {
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+header nav a:hover,
+header nav a.active {
+  color: var(--accent-color);
+}
+.blog-title {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* 5. 포스트 목록 스타일 */
+.post-item {
+  border-bottom: 1px solid #e5e5e5;
+  transition: background-color 0.2s;
+}
+.post-item:hover {
+  background-color: #f9f9f9;
+}
+.post-item h2 {
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+.post-item:hover h2 {
+  color: var(--accent-color);
+}
+.post-meta {
+  color: var(--text-secondary);
+}
+
+/* 6. 포스트 상세 페이지 스타일 */
+.post-content h1 {
+  font-size: 2.75rem; /* 44px */
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.post-content .post-meta {
+  margin-bottom: 3rem;
+}
+.post-content p {
+  line-height: 1.8;
+  font-size: 1.125rem; /* 18px */
+  margin-bottom: 1.5rem;
+}
+.post-content a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* 7. 코드 블록 스타일 */
+.post-content pre {
+  background-color: var(--code-bg);
+  color: #f8f8f2;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.post-content code {
+  font-family: "SF Mono", "Menlo", "Monaco", "Consolas", "Liberation Mono",
+    "Courier New", monospace;
+}
+
+/* 8. 푸터 스타일 */
+footer {
+  color: var(--text-secondary);
+  border-top: 1px solid #e5e5e5;
+}
