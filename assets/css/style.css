@@ -494,3 +494,34 @@ a:hover {
   font-size: 0.9em;
   color: #6e6e73;
 }
+
+.video-wrapper,
+.video-wrapper-vertical {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  margin: 30px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper iframe,
+.video-wrapper-vertical iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 가로 영상 (16:9) */
+.video-wrapper {
+  padding-bottom: 56.25%; /* 16:9 비율 (9 / 16 = 0.5625) */
+  max-width: 750px; /* 본문 너비와 맞춤 */
+}
+
+/* 세로 영상 (9:16) */
+.video-wrapper-vertical {
+  padding-bottom: 177.77%; /* 9:16 비율 (16 / 9 = 1.7777) */
+  max-width: 420px; /* 세로 영상이 너무 커지지 않도록 최대 너비 제한 */
+}
