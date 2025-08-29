@@ -1,3 +1,4 @@
 ---
 layout: undercons
+permalink: /undercons/
 ---
