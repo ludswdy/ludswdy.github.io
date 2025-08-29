@@ -1,0 +1,188 @@
+---
+layout: default
+---
+
+<div class="home">
+  <section class="post-section">
+    <h2 class="section-title">Lastest</h2>
+    {%- assign posts = site.posts -%} {% if posts.size > 0 %}
+    <div class="featured-post">
+      <a href="{{ posts.first.url | relative_url }}" class="thumbnail-link">
+        <div class="thumbnail">
+          {% if posts.first.thumbnail %}
+          <img
+            src="{{ posts.first.thumbnail | relative_url }}"
+            alt="{{ posts.first.title }} thumbnail"
+          />
+          {% else %}
+          <div class="thumbnail-placeholder"></div>
+          {% endif %}
+        </div>
+      </a>
+      <div class="post-info">
+        <h3 class="post-title">
+          <a href="{{ posts.first.url | relative_url }}"
+            >{{ posts.first.title | escape }}</a
+          >
+        </h3>
+        <p class="post-excerpt">
+          {% if posts.first.description %}
+            {{ posts.first.description }}
+          {% else %}
+            {{ posts.first.excerpt | strip_html | truncatewords: 50 }}
+          {% endif %}
+        </p>
+        <p class="post-meta">
+            <time datetime="{{ posts.first.date | date_to_xmlschema }}">{{ posts.first.date | date: "%b %-d, %Y" }}</time>
+          </p>
+
+      </div>
+    </div>
+    <div class="post-list">
+      {% for post in posts offset:1 %}
+      <div class="post-item">
+        <a href="{{ post.url | relative_url }}" class="item-thumbnail-link">
+          {% if post.thumbnail %}
+          <img
+            src="{{ post.thumbnail | relative_url }}"
+            alt="{{ post.title }} thumbnail"
+            class="item-thumbnail"
+          />
+          {% else %}
+          <div class="item-thumbnail-placeholder"></div>
+          {% endif %}
+        </a>
+        <div class="item-info">
+          <h4 class="item-title">
+            <a href="{{ post.url | relative_url }}"
+              >{{ post.title | escape }}</a
+            >
+          </h4>
+          <p class="item-meta">
+            {{ site.author }}
+            <time datetime="{{ post.date | date_to_xmlschema }}"
+              >{{ post.date | date: "%b %-d, %Y" }}</time
+            >
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a href="/all/" class="show-more">Show more →</a>
+    {% endif %}
+  </section>
+
+  <section class="post-section">
+    <h2 class="section-title">Daily</h2>
+    {%- assign category_posts = site.categories.Daily -%} {% if
+    category_posts.size > 0 %}
+    <div class="featured-post">
+      <a
+        href="{{ category_posts.first.url | relative_url }}"
+        class="thumbnail-link"
+      >
+        <div class="thumbnail">
+          {% if category_posts.first.thumbnail %}
+          <img
+            src="{{ category_posts.first.thumbnail | relative_url }}"
+            alt="{{ category_posts.first.title }} thumbnail"
+          />
+          {% else %}
+          <div class="thumbnail-placeholder"></div>
+          {% endif %}
+        </div>
+      </a>
+      <div class="post-info">
+        <h3 class="post-title">
+          <a href="{{ category_posts.first.url | relative_url }}"
+            >{{ category_posts.first.title | escape }}</a
+          >
+        </h3>
+        <p class="post-excerpt">
+          {% if posts.first.description %}
+            {{ posts.first.description }}
+          {% else %}
+            {{ posts.first.excerpt | strip_html | truncatewords: 50 }}
+          {% endif %}
+        </p>
+        <p class="post-meta">
+            <time datetime="{{ posts.first.date | date_to_xmlschema }}">{{ posts.first.date | date: "%b %-d, %Y" }}</time>
+          </p>
+      </div>
+    </div>
+    <div class="post-list">
+      {% for post in category_posts offset:1 %}
+      <div class="post-item">
+        <a href="{{ post.url | relative_url }}" class="item-thumbnail-link">
+          {% if post.thumbnail %}
+          <img
+            src="{{ post.thumbnail | relative_url }}"
+            alt="{{ post.title }} thumbnail"
+            class="item-thumbnail"
+          />
+          {% else %}
+          <div class="item-thumbnail-placeholder"></div>
+          {% endif %}
+        </a>
+        <div class="item-info">
+          <h4 class="item-title">
+            <a href="{{ post.url | relative_url }}"
+              >{{ post.title | escape }}</a
+            >
+          </h4>
+          <p class="item-meta">
+            {{ site.author }}
+            <time datetime="{{ post.date | date_to_xmlschema }}"
+              >{{ post.date | date: "%b %-d, %Y" }}</time
+            >
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a href="{{ "/category/daily/" | relative_url }}" class="show-more">Show more →</a>
+    {% else %}
+    <p>No posts in this category yet.</p>
+    {% endif %}
+  </section>
+
+  <section class="other-categories-section">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <div class="footer-col-header">
+          <h3 class="col-title">Journey</h3>
+          <a href="{{ "/category/journey/" | relative_url }}" class="col-more">More →</a>
+        </div>
+        <ul class="post-list-simple">
+          {% for post in site.categories.Journey limit:3 %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-header">
+          <h3 class="col-title">Project</h3>
+          <a href="{{ "/category/project/" | relative_url }}" class="col-more">More →</a>
+        </div>
+        <ul class="post-list-simple">
+          {% for post in site.categories.Project limit:3 %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-header">
+          <h3 class="col-title">etc</h3>
+          <a href="{{ "/category/etc/" | relative_url }}" class="col-more">More →</a>
+        </div>
+        <ul class="post-list-simple">
+          {% for post in site.categories.etc limit:3 %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>

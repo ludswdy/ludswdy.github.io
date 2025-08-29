@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="archive-page">
+  <h1 class="section-title">{{ page.title }}</h1>
+
+  <div class="archive-list">
+    {% for post in site.categories[page.category] %}
+    <div class="archive-list-item">
+      <a href="{{ post.url | relative_url }}" class="archive-thumbnail-link">
+        <div class="archive-thumbnail">
+          {% if post.thumbnail %}
+          <img
+            src="{{ post.thumbnail | relative_url }}"
+            alt="{{ post.title }} thumbnail"
+          />
+          {% else %}
+          <div class="thumbnail-placeholder"></div>
+          {% endif %}
+        </div>
+      </a>
+      <div class="archive-post-info">
+        <h3 class="archive-post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <p class="archive-post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+        <p class="archive-post-excerpt">
+          {% if post.description %} {{ post.description }} {% else %} {{
+          post.excerpt | strip_html | truncatewords: 30 }} {% endif %}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

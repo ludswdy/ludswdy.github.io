@@ -1,0 +1,20 @@
+<header class="site-header">
+  <div class="wrapper">
+    <div class="header-left">
+      <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+      <span class="current-date">
+        <script>
+          const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+          const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+          const now = new Date();
+          document.write(days[now.getDay()] + ', ' + months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear());
+        </script>
+      </span>
+    </div>
+    <nav class="site-nav">
+      <a class="page-link" href="/">Home</a>
+      <a class="page-link" href="/undercons/">About</a>
+      <a class="page-link" href="/all/">Posts</a>
+    </nav>
+  </div>
+</header>
