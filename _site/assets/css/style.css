@@ -425,6 +425,10 @@ img {
   color: #6e6e73;
 }
 
+.mobile-break {
+  display: none;
+}
+
 @media (max-width: 768px) {
   /* 1. 모바일 기본 글씨 크기 줄이기 */
   body {
@@ -495,5 +499,35 @@ img {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
+  }
+  .mobile-break {
+    display: block;
+  }
+}
+
+/* --- undercon style --- */
+.construction-container {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.construction-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+
+  .construction-image img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+
+  .construction-message {
+    color: #555555;
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+
+  .construction-message .english {
+    font-weight: bold;
   }
 }
