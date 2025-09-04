@@ -1,17 +1,4 @@
-{% if include.width %} {% assign width_style = "width: " | append: include.width
-| append: ";" %} {% else %} {% assign width_style = "" %} {% endif %}
-
-<figure
-  class="image-wrapper"
-  {%
-  if
-  width_style
-  !=""
-  %}style="{{ width_style }}"
-  {%
-  endif
-  %}
->
+<figure class="image-wrapper">
   <img
     src="{{ include.url | relative_url }}"
     alt="{{ include.alt | default: '이미지' }}"
