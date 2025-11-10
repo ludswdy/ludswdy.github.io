@@ -1,0 +1,533 @@
+/* --- 기본 설정 --- */
+body {
+  font-family: "Times New Roman", "Pretendard", serif;
+  margin: 0;
+  background-color: #fff;
+  color: #1d1d1f;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+}
+
+a {
+  color: #1d1d1f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* 이미지 아래 불필요한 여백 제거 */
+}
+
+/* --- 헤더 --- */
+.site-header {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 15px 0;
+}
+
+.site-header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  line-height: 1;
+}
+.site-title:hover {
+  text-decoration: none;
+}
+
+.current-date {
+  font-size: 0.9em;
+  color: #6e6e73;
+  display: block;
+  margin-top: 4px;
+}
+
+.site-nav .page-link {
+  margin-left: 20px;
+  font-size: 0.9em;
+}
+
+/* --- 푸터 --- */
+.site-footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 30px 0;
+  margin-top: 60px;
+}
+.footer-content {
+  text-align: center;
+  color: #6e6e73;
+  font-size: 0.8em;
+}
+.copyright {
+  margin: 0 0 10px 0;
+}
+.footer-nav a {
+  color: #6e6e73;
+  margin: 0 10px;
+}
+
+/* --- 메인 페이지 (home.html) --- */
+.post-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 1.8em;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+/* 추천 글 (가장 최신 글) */
+.featured-post {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.thumbnail-link {
+  flex-shrink: 0;
+}
+
+.thumbnail {
+  width: 450px;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.thumbnail-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f7;
+}
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-info {
+  flex-grow: 1;
+}
+
+.featured-post .post-title {
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.featured-post .post-meta {
+  font-size: 0.9em;
+  color: #6e6e73;
+  margin: 0 0 15px 0;
+}
+.featured-post .post-excerpt {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #6e6e73;
+}
+
+/* 나머지 글 목록 */
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 20px;
+}
+
+.post-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.item-thumbnail-link {
+  flex-shrink: 0;
+}
+
+.item-thumbnail {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.item-thumbnail-placeholder {
+  width: 80px;
+  height: 60px;
+  background-color: #f5f5f7;
+  border-radius: 4px;
+}
+
+.item-info .item-title {
+  font-size: 1em;
+  margin: 0 0 5px 0;
+  font-weight: normal;
+}
+.item-info .item-meta {
+  font-size: 0.8em;
+  color: #6e6e73;
+  margin: 0;
+}
+
+.show-more {
+  display: block;
+  text-align: right;
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #1d1d1f;
+}
+.show-more:hover {
+  text-decoration: none;
+}
+
+/* 페이지 하단 Project & etc 섹션 */
+.other-categories-section {
+  margin-bottom: 60px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.footer-col-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.col-title {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.col-more {
+  font-size: 0.9em;
+}
+
+.post-list-simple {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.post-list-simple li {
+  margin-bottom: 10px;
+}
+
+/* 글 목록 페이지 (archive.html, category.html) */
+.archive-page .section-title {
+  margin-bottom: 10px;
+}
+.archive-list-item {
+  display: flex;
+  gap: 25px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.archive-list-item:first-of-type {
+  padding-top: 10px;
+}
+.archive-list-item:last-of-type {
+  border-bottom: none;
+}
+.archive-thumbnail-link {
+  flex-shrink: 0;
+}
+.archive-thumbnail {
+  width: 240px;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f5f5f7;
+}
+.archive-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.archive-post-info {
+  flex-grow: 1;
+}
+.archive-post-title {
+  font-size: 1.4em;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+.archive-post-meta {
+  font-size: 0.9em;
+  color: #6e6e73;
+  margin: 0 0 12px 0;
+}
+.archive-post-excerpt {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #6e6e73;
+  margin: 0;
+}
+
+/* --- 글 상세 페이지 (post.html) --- */
+.post-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.post-header .post-title {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.post-header .post-meta {
+  font-size: 0.9em;
+  color: #6e6e73;
+}
+
+.post-content {
+  max-width: 900px; /* [기준] 모든 본문 콘텐츠의 기준 너비 */
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 1.05em;
+}
+.post-content p {
+  text-align: justify;
+  margin-bottom: 1em;
+}
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+/* 기본 이미지 (한 장일 때) */
+.image-wrapper {
+  margin: 30px auto 10px; /* 좌우 auto 제거 -> 이제 부모(.post-content)의 정렬을 따름 */
+}
+.image-wrapper img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%; /* 너비를 100%로 강제 */
+}
+.image-wrapper figcaption {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #6e6e73;
+  text-align: center;
+}
+
+/* 여러 이미지 행 (가로 배치용) */
+.image-row {
+  display: flex;
+  gap: 15px;
+  margin: 30px 0 10px; /* 좌우 auto 제거 */
+  justify-content: center;
+  align-items: stretch;
+}
+.image-row .image-wrapper {
+  flex: 1;
+  margin: 0; /* 행 안에서는 위아래 마진 제거 */
+}
+
+/* 공통 캡션이 있는 이미지 그룹 */
+.image-gallery {
+  margin: 30px 0 10px; /* 좌우 auto 제거 */
+}
+.image-gallery .image-row {
+  margin-bottom: 10px;
+}
+.gallery-caption {
+  text-align: center !important;
+  font-size: 0.9em;
+  color: #6e6e73;
+}
+
+/* 동영상 컨테이너 너비 통일 */
+.custom-video-container {
+  margin: 30px 0; /* 좌우 auto 제거 */
+}
+.custom-video-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #000;
+}
+.custom-video-wrapper video {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.custom-video-caption {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #6e6e73;
+  text-align: center;
+}
+
+/* 장소 링크 너비 통일 */
+.place-wrapper {
+  margin: 30px 0; /* 좌우 auto 제거 */
+}
+.place-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  border-left: 4px solid #03c75a;
+}
+.place-link:hover {
+  text-decoration: none;
+  border-color: #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left-color: #03c75a;
+}
+.place-marker {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='%2303C75A' d='M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.place-text {
+  line-height: 1.4;
+}
+.place-name {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.place-address {
+  font-size: 0.9em;
+  color: #6e6e73;
+}
+
+.mobile-break {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* 1. 모바일 기본 글씨 크기 줄이기 */
+  body {
+    font-size: 16px;
+  }
+
+  .site-title {
+    font-size: 1em; /* 타이틀 폰트 크기 살짝 줄임 */
+  }
+
+  .current-date {
+    font-size: 0.7em; /* 날짜 폰트 크기를 더 줄여 공간 확보 */
+    margin-top: 2px;
+    white-space: nowrap; /* 날짜가 길어져도 줄바꿈 방지 */
+  }
+
+  .site-nav .page-link {
+    font-size: 0.8em; /* 메뉴 폰트 크기 줄임 */
+    margin-left: 10px; /* 메뉴 사이 간격 줄임 */
+  }
+
+  .place-address {
+    word-break: keep-all; /* 한글 단어 중간에 잘리지 않도록 함 */
+    line-height: 1.5; /* 줄 간격 살짝 추가 */
+    font-size: 0.8em;
+  }
+
+  .place-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+  }
+  .place-link {
+    padding: 15px; /* 내부 여백 줄이기 */
+    gap: 15px; /* 아이콘과 텍스트 사이 간격 줄이기 */
+  }
+  .place-name {
+    font-size: 1em; /* 장소 이름 폰트 크기 줄이기 */
+  }
+
+  .image-wrapper figcaption,
+  .gallery-caption {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.4;
+  }
+
+  .featured-post {
+    flex-direction: column;
+  }
+  .thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .post-list {
+    grid-template-columns: 1fr;
+  }
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+  .archive-list-item {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .archive-thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .mobile-break {
+    display: block;
+  }
+}
+
+/* --- undercon style --- */
+.construction-container {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.construction-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+
+  .construction-image img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+
+  .construction-message {
+    color: #555555;
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+
+  .construction-message .english {
+    font-weight: bold;
+  }
+}
